@@ -1,0 +1,22 @@
+# Ignore all node_modules and dist folders
+node_modules/
+dist/
+client/node_modules/
+client/dist/
+nest-server/node_modules/
+electron/dist/
+
+# Ignore logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore database files (if you want)
+tasks.db
+
+# Allow .gitignore, package.json, and package-lock.json
+!.gitignore
+!package.json
+!package-lock.json
