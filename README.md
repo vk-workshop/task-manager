@@ -7,7 +7,6 @@
 
 A cross-platform desktop task management application with Electron, React, and NestJS.
 
-![Task Manager Screenshot](https://via.placeholder.com/800x500.png?text=Task+Manager+Screenshot)
 
 ## Features
 
