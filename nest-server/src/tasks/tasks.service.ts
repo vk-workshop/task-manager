@@ -21,14 +21,13 @@ export class TasksService {
     return this.tasksRepository.save(newTask);
   }
 
-  async update(id: number, taskData: Partial<Task>) {
-    const task = await this.tasksRepository.findOneBy({ id });
-    if (!task) {
-      throw new Error('Task not found');
+  async update(id: number, taskData: Partial<Task>): Promise<Task> {
+    await this.tasksRepository.update(id, taskData);
+    const updatedTask = await this.tasksRepository.findOneBy({ id });
+    if (!updatedTask) {
+      throw new NotFoundException(`Task with id ${id} not found`);
     }
-
-    const updatedTask = await this.tasksRepository.update(id, taskData);
-
+    
     return updatedTask;
   }
 

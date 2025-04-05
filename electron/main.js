@@ -13,6 +13,7 @@ let mainWindow;
 
 const clientPath = path.join(__dirname, '../client/dist');
 console.log('Client path exists:', clientPath);
+
 if (!fs.existsSync(path.join(clientPath, 'index.html'))) {
   console.error('Client build not found!');
   electronApp.quit();
@@ -21,12 +22,7 @@ if (!fs.existsSync(path.join(clientPath, 'index.html'))) {
 async function bootstrapNest() {
   try {
     const nestApp = await NestFactory.create(AppModule);
-    // nestApp.enableCors();
-    nestApp.enableCors({
-      origin: 'http://localhost:3000',
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      credentials: true,
-     });
+    nestApp.enableCors();
     await nestApp.listen(3001);
     console.log('NestJS server running on port 3001');
   } catch (error) {

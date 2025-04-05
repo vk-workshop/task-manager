@@ -9,8 +9,8 @@ const TaskForm = ({ task, onSubmit, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     const cleanTitle = formData.title.trim();
+    
     if (!cleanTitle) {
       alert('Title cannot be empty');
       return;
@@ -19,7 +19,7 @@ const TaskForm = ({ task, onSubmit, onCancel }) => {
     onSubmit({
       title: cleanTitle,
       description: formData.description.trim(),
-      status: formData.status ? 1 : 0,
+      status: formData.status,
     });
   };
 

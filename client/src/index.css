@@ -3,6 +3,14 @@
   --secondary-color: #3498db;
   --background-color: #f5f6fa;
   --completed-color: #27ae60;
+  --error-color: #e74c3c;
+  --hover-secondary: #2980b9;
+  --warning-color: #f1c40f;
+  --danger-color: #e74c3c;
+  --text-muted: #666;
+  --border-color: #ddd;
+  --checkbox-border: #ced4da;
+  --checkbox-bg: #f8f9fa;
 }
 
 * {
@@ -33,10 +41,10 @@ h1 {
 }
 
 .error {
-  color: #e74c3c;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #e74c3c;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
   border-radius: 4px;
 }
 
@@ -49,7 +57,7 @@ h1 {
 .filter-search select,
 .filter-search input {
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   flex: 1;
 }
@@ -65,7 +73,7 @@ h1 {
 }
 
 .add-button:hover {
-  background-color: #2980b9;
+  background-color: var(--hover-secondary);
 }
 
 .task-list {
@@ -94,7 +102,7 @@ h1 {
 }
 
 .task-content p {
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
@@ -116,11 +124,11 @@ h1 {
 }
 
 .task-actions button:first-child {
-  background-color: #f1c40f;
+  background-color: var(--warning-color);
 }
 
 .task-actions button:last-child {
-  background-color: #e74c3c;
+  background-color: var(--danger-color);
   color: white;
 }
 
@@ -162,7 +170,7 @@ h1 {
   gap: 12px;
   padding: 8px 12px;
   border-radius: 6px;
-  background-color: #f8f9fa;
+  background-color: var(--checkbox-bg);
   transition: all 0.2s ease;
   cursor: pointer;
   margin: 10px 0;
@@ -176,7 +184,7 @@ h1 {
   margin: 0;
   cursor: pointer;
   appearance: none;
-  border: 2px solid #ced4da;
+  border: 2px solid var(--checkbox-border);
   border-radius: 4px;
   transition: all 0.2s ease;
 }

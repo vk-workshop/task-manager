@@ -29,7 +29,7 @@ async function bootstrap() {
       return;
     }
     
-    res.sendFile(path.join(__dirname, '../../../client/dist', 'index.html'));
+    res.sendFile(filePath);
   });
 
   await app.listen(3001);

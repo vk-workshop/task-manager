@@ -66,7 +66,9 @@ const App = () => {
     task.description?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  if (loading) return <div className="loading">Loading...</div>;
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
 
   return (
     <div className="app">
@@ -87,7 +89,10 @@ const App = () => {
       {editingTask && (
         <TaskForm
           task={editingTask}
-          onSubmit={editingTask.id ? handleUpdate : handleCreate}
+          onSubmit={editingTask.id ? 
+            (taskData) => handleUpdate(editingTask.id, taskData) : 
+            handleCreate
+          }
           onCancel={() => setEditingTask(null)}
         />
       )}
